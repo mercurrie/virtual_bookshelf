@@ -17,8 +17,8 @@ class Book(db.Model):
     author = db.Column(db.String(250), nullable=False)
     rating = db.Column(db.Float, nullable=False)
 
-
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 
 @app.route('/')
